@@ -63,6 +63,7 @@ cq.display()
 cq.enqueue(60)
 cq.enqueue(70)
 cq.display()
+cq.peek()
 
 
 

@@ -1,30 +1,43 @@
 class Stack:
-    def __init__(self,maxsize):
-        self.list,self.max,self.top=[],maxsize,-1
-    def push(self,value):
-        if self.top < self.max -1:
-            self.list.append(value)
-            self.top +=1
-            print(f"Value Pushed: {value}")
+    def __init__(self, max_size):
+        self.l = []
+        self.max= max_size
+        self.top = -1
+    def push(self, value):
+        if self.top < self.max - 1:
+            self.l.append(value)
+            self.top += 1
+            print(f"Pushed {value}") 
         else:
-            print("Stack overflow")
+            print(f"Stack Overflow! Cannot push {value}.")
+            
     def pop(self):
-        if self.top==-1:
-            print("Stac underflow")
+        if self.top == -1:
+            print("Stack Underflow!")
         else:
-            print(f"Value Popped {self.list.pop()}")
-            self.top -=1
+            print(f"Popped {self.l.pop()}")
+            self.top -= 1
+    def peek(self):
+        if self.top == -1:
+            print("Stack is empty!")
+        else:
+            print("Top Element:", self.l[self.top])
+    
     def traverse(self):
-        print("Elements in Stack: ",self.list)
+        print("Stack:", self.l)
 
-s=Stack(5)
-s.push(10)
-s.push(30)
-s.push(60)
-s.push(20)
-s.traverse()
-s.pop()
-s.traverse()
+stack = Stack(int(input("Max size: ")))
+stack.push(10)
+stack.push(20)
+stack.push(30)
+stack.push(40)
+stack.push(50)
+stack.push(60)  # This should trigger stack overflow
+stack.traverse()
+stack.pop()
+stack.push(70)
+stack.traverse()
+stack.peek()
 
 
 

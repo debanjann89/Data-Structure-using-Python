@@ -19,7 +19,6 @@ class LQ:
         removeitem = self.l[self.front]
         self.front +=1
         print(f"Removed Item {removeitem}")
-        return removeitem
     def peek(self):
         if self.front==-1:
             print("LQ is empty")
